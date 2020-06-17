@@ -24,7 +24,7 @@ var gameOver = false;
  5. sets the game over flag to false to indicate that the game is in progress
  */
 function resetGame() {
-
+ 
     // TODO: document this code from class
     for ( i = 0; i < board.length; i++) {
         board[i].innerHTML = "";
@@ -34,6 +34,7 @@ function resetGame() {
     
 
     // TODO reset gameOver and # of empty cells
+    window.location.reload();
 }
 
 /* Function cellClicked() is called
@@ -65,10 +66,12 @@ function checkWin() {
 
     // TODO: document all of the code from class
     for ( i = 0; i < winSets.length; i++) {
-        if (board[winSets[i][0]].innerHTML == board[winSets[i][1]].innerHTML 
-            && board[winSets[i][1]].innerHTML == board[winSets[i][2]].innerHTML 
+        if (board[winSets[i][0]].innerHTML == board[winSets[i][1]].innerHTML
+            && board[winSets[i][1]].innerHTML == board[winSets[i][2]].innerHTML
             && board[winSets[i][0]].innerHTML != "") {
-                
+              
+                document.getElementById("winner").innerHTML="X wins";
+                gameOver=true;
             console.log("We have a winner!");
 
             // TODO: replace console.log("We have a winner!") with:
@@ -113,12 +116,14 @@ for ( i = 0; i < board.length; i++) {
 // displayWin(false) hides)
 function displayWin(show) {
     if (show) {
-        document.getElementById("message").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
+        document.getElementById("message").style.display = "hidden";
+        document.getElementById("overlay").style.display = "hidden";
     } else {
-        document.getElementById("message").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
+        document.getElementById("message").style.display = "hidden";
+        document.getElementById("overlay").style.display = "hidden";
     }
 }
+var apple= prompt("ss");
+)
 
 // ===============================================================
