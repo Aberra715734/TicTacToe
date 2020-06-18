@@ -1,6 +1,7 @@
-/* Your Name Here */
+/* Abdu Aberra */
 
 // TODO document this
+
 var board = document.getElementsByTagName("td");
 
 // assuming we index the 9 tic tac toe cells from left to right, top to
@@ -24,17 +25,19 @@ var gameOver = false;
  5. sets the game over flag to false to indicate that the game is in progress
  */
 function resetGame() {
- 
+    
     // TODO: document this code from class
-    for ( i = 0; i < board.length; i++) {
-        board[i].innerHTML = "";
+    //makes the number disappear
+   for ( i = 0; i < board.length; i++) {
+     board[i].innerHTML="";
     }
   
     // TODO reset player back to X and update it on the page
-    
+
 
     // TODO reset gameOver and # of empty cells
-    window.location.reload();
+   gameOver="false";
+
 }
 
 /* Function cellClicked() is called
@@ -49,11 +52,12 @@ function resetGame() {
 function cellClicked(cell) {
 
     //TODO: 1-5 should occur only when the selected cell is empty and the game is 
-    // still in progress!
-
+    // still in progress
+   
+         
     // TODO: decrease # of empty cells by 1
   
-    // TODO: document this code from class
+     //TODO: document this code from class
     cell.innerHTML = player;
     checkWin();    
     player = (player === "X") ? "O" : "X";
@@ -65,14 +69,14 @@ function cellClicked(cell) {
 function checkWin() {
 
     // TODO: document all of the code from class
-    for ( i = 0; i < winSets.length; i++) {
+    for ( var i = 0; i < winSets.length; i++) {
         if (board[winSets[i][0]].innerHTML == board[winSets[i][1]].innerHTML
             && board[winSets[i][1]].innerHTML == board[winSets[i][2]].innerHTML
             && board[winSets[i][0]].innerHTML != "") {
               
                 document.getElementById("winner").innerHTML="X wins";
-                gameOver=true;
-            console.log("We have a winner!");
+                gameOver=false;
+            alert("We have a winner!");
 
             // TODO: replace console.log("We have a winner!") with:
             //  - set gameOver variable: game is now over  
@@ -123,7 +127,7 @@ function displayWin(show) {
         document.getElementById("overlay").style.display = "hidden";
     }
 }
-var apple= prompt("ss");
-)
 
-// ===============================================================
+
+
+// ================================================================
